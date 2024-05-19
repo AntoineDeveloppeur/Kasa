@@ -44,14 +44,20 @@ body {
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
+ul,
+ol {
   list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Make images easier to work with */
@@ -79,5 +85,38 @@ select {
 *
 */
 
+
+/* Global rules */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  }
+
 /* Variables */
-$main-color: #FF6060;
+:root {
+  --main-color:  #FF6060;
+}
+
+/* Bloc */
+.header {
+  margin-top: 45px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Elements */
+.header__ul {
+  display: flex;
+}
+
+.header__link {
+  margin-left: 57px;
+  font-size: 24px;
+  font-weight: 500;
+  
+}
