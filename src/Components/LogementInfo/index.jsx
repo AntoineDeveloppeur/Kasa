@@ -9,6 +9,7 @@ import ListelogementJSON from '../../data/logement.json'
 
 const Info = styled.div`
     width: 100%;
+    max-width: 1240px;
     margin: auto;
     margin-bottom: 50px;   
     `
@@ -40,7 +41,7 @@ const Info = styled.div`
     align-items: center;
     `
     
-    const Name = styled.p``
+    const Name = styled.div``
 
     const FirstName = styled.p``
 
@@ -70,7 +71,7 @@ function LogementInfo({housingIndex}) {
                     <Localisation>
                         {ListelogementJSON[housingIndex].location}
                     </Localisation>
-                    <Tags />
+                    <Tags housingIndex={housingIndex}/>
                 </Titleandtags>
                 <Hostandrating>
                     <Host>
@@ -81,7 +82,6 @@ function LogementInfo({housingIndex}) {
                             <FamilyName>
                                 {familyName}
                             </FamilyName>
-                            
                         </Name>
                         <Picture src={ListelogementJSON[housingIndex].host.picture}/>
                     </Host>
