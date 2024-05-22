@@ -5,6 +5,7 @@ import Rating from '../Rating'
 import Collapse from '../Collapse'
 import '../../utils/styles/GlobalStyle.scss'
 import splitName from '../../utils/functions/splitname'
+import ListelogementJSON from '../../data/logement.json'
 
 const Info = styled.div`
     width: 100%;
@@ -41,40 +42,48 @@ const Info = styled.div`
     
     const Name = styled.p``
 
-const Picture = styled.img`
+    const FirstName = styled.p``
+
+    const FamilyName = styled.p``
+
+    const Picture = styled.img`
     height: 64px;
     width: 64px;
-    border-radius: 16px;
+    border-radius: 32px;
     `
 
-const Collapses = styled.div``
+    const Collapses = styled.div``
 
 
-function LogementInfo() {
+function LogementInfo({housingIndex}) {
 
-const [firstName, familyName] = splitName("Doe")
-console.log(firstName, "firstName")
-console.log(familyName, "familyName")
-
+    const [firstName, familyName] = splitName(ListelogementJSON[housingIndex].host.name)
+    console.log("housingIndex LogementInfo",housingIndex)
      
     return (
         <Info>
             <Firstinfo>
                 <Titleandtags>
                     <Title>
-                        Title du logement
+                        {ListelogementJSON[housingIndex].title}
                     </Title>
                     <Localisation>
-                        Localisation
+                        {ListelogementJSON[housingIndex].location}
                     </Localisation>
                     <Tags />
                 </Titleandtags>
                 <Hostandrating>
                     <Host>
                         <Name>
-                            Alexandre Dumas
+                            <FirstName>
+                                {firstName}
+                            </FirstName>
+                            <FamilyName>
+                                {familyName}
+                            </FamilyName>
+                            
                         </Name>
-                        <Picture src={logo_maincolor_desktop}/>
+                        <Picture src={ListelogementJSON[housingIndex].host.picture}/>
                     </Host>
                     <Rating />
                 </Hostandrating>
