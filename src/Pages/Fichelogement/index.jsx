@@ -1,8 +1,12 @@
-
+import Gallery from"../../Components/Gallery"
+import Logementinfo from "../../Components/LogementInfo"
 
 function Fichelogement() {
     return (
-        <div>FicheLogement</div>
+        <div className="fichelogement">
+            <Gallery />
+            <Logementinfo />
+        </div>
     )
 }
 

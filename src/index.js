@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from "./Components/Header"
+import Footer from './Components/Footer'
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from "react-router-dom"
 import Home from './Pages/Home'
@@ -18,6 +19,7 @@ root.render(
       <Route path="/Fichelogement" element={ <Fichelogement />} />
       <Route path="/Apropos" element={ <Apropos /> } />
     </Routes>
+    <Footer />
   </BrowserRouter>
 );
 

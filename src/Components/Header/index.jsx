@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import '../../utils/styles/GlobalStyle.css'
+import '../../utils/styles/GlobalStyle.scss'
 import logo_maincolor_desktop from '../../assets/logo_maincolor_desktop.png'
 
 function Header() {
