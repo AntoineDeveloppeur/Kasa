@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 function Cards() {
     return (
         <div className="cards">
-            {console.log(logement)}
             {logement.map((card, index) => (
                 <Link to={`/Fichelogement/${index}`} id={card.id} className="cards__card" key={card.id}>
                     <p className="cards__card__p">{card.title}</p>

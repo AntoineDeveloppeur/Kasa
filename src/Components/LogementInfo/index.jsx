@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 import Tags from '../Tags'
-import logo_maincolor_desktop from '../../assets/logo_maincolor_desktop.png'
 import Rating from '../Rating'
 import Collapse from '../Collapse'
 import '../../utils/styles/GlobalStyle.scss'
 import splitName from '../../utils/functions/splitname'
 import ListelogementJSON from '../../data/logement.json'
 
-const Info = styled.div`
+    const Info = styled.div`
     width: 100%;
     max-width: 1240px;
     margin: auto;
@@ -53,13 +52,18 @@ const Info = styled.div`
     border-radius: 32px;
     `
 
-    const Collapses = styled.div``
+    const Collapses = styled.div`
+        display: flex;
+        justify-content: space-between;
+        width: auto;
+        max-width: 1240px;
+        gap: 40px;
+    `
 
 
 function LogementInfo({housingIndex}) {
 
     const [firstName, familyName] = splitName(ListelogementJSON[housingIndex].host.name)
-    console.log("housingIndex LogementInfo",housingIndex)
      
     return (
         <Info>
@@ -85,7 +89,7 @@ function LogementInfo({housingIndex}) {
                         </Name>
                         <Picture src={ListelogementJSON[housingIndex].host.picture}/>
                     </Host>
-                    <Rating />
+                    <Rating housingIndex={housingIndex}/>
                 </Hostandrating>
             </Firstinfo>
             <Collapses>

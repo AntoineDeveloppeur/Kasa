@@ -4,11 +4,10 @@ import { useParams } from "react-router-dom"
 
 function Fichelogement() {
     const { housingIndex } = useParams()
-    console.log("housingIndex",housingIndex)
 
     return (
         <div className="fichelogement">
-            <Gallery />
+            <Gallery housingIndex={housingIndex} />
             <Logementinfo housingIndex={housingIndex} />
         </div>
     )
