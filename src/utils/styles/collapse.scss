@@ -1,0 +1,45 @@
+.hidden {
+    display: none;
+}
+
+@keyframes slide {
+    from {
+        transform: scaleY(1);
+        transform-origin: top;
+    }   
+    to {
+        transform: scaleY(0);
+        transform-origin: top;
+    }   
+
+}
+
+.collapse-content {
+    animation: slide 2s ease-in-out;
+
+}
+
+@keyframes slide-up {
+    from {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    to {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
+
+.show-content {
+    animation: slide-up 2s ease-in-out;
+}
+
+.arrow-down {
+    transform: rotate(0deg);
+    transition: transform 0.4s cubic-bezier(.68,.06,.08,.87);
+}
+
+.arrow-up {
+    transform: rotate(180deg);
+    transition: transform 0.4s cubic-bezier(.68,.06,.08,.87);
+}

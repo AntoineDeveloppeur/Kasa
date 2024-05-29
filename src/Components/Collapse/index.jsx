@@ -2,6 +2,7 @@ import styled from "styled-components"
 import arrow_down from "../../assets/arrow_down.png"
 import { useState } from "react"
 import '../../utils/styles/GlobalStyle.scss'
+import '../../utils/styles/collapse.scss'
 
 const CollapseDiv = styled.div`
     margin-top: 30px;
@@ -24,9 +25,8 @@ const Title = styled.h2`
     `
 
 const HiddenContent = styled.div`
-    position: absolute;
+    position: relative;
     left: 0;
-    top: 40px;
     width: 100%;
     overflow: clip;
     background-color: #F6F6F6;
@@ -35,26 +35,21 @@ const HiddenContent = styled.div`
     padding-top: 25px; 
     border-radius: 0 0 10px 10px;
     z-index:0;
-    transition: height 500ms;
-    height: ${(props) => (props.show ? '300px' : '20px')};
-    transition: height 0.4s cubic-bezier(.68,.06,.08,.87);
     `
 
 const Arrow = styled.img`
     position: absolute;
     top: 10px;
     right: 10px;
-    transform: ${(props) => (props.show ? 'rotate(0deg)' : 'rotate(180deg)')};
     transition: transform 0.4s cubic-bezier(.68,.06,.08,.87);
 `
 
 const Text = styled.p``
 
 
-
 function Collapse() {
 
-    const [ showCollapse, setShowCollapse] = useState(false)
+    const [showCollapse, setShowCollapse] = useState(false)
 
     
     function handleClick() {
@@ -62,16 +57,20 @@ function Collapse() {
     }
 
     return (
-        <CollapseDiv>
+        <CollapseDiv className='collapse'>
             <Headband>
                 <Title>
                     Description
                 </Title>
             </Headband>
-            <Arrow src={arrow_down} onClick={handleClick} alt="flèche vers le bas" show={showCollapse} />
-            <HiddenContent show={showCollapse} >
+            <Arrow src={arrow_down} onClick={handleClick} alt="flèche vers le bas" className={showCollapse?'arrow-down':'arrow-up' } />
+            <HiddenContent className={(showCollapse?'show-content':' collapse-content')} >
                 <Text>
-                    description
+                    description<br/>
+                    description<br/>
+                    description<br/>
+                    description<br/>
+                    
                 </Text>
             </HiddenContent>
         </CollapseDiv>
@@ -79,3 +78,5 @@ function Collapse() {
 }
 
 export default Collapse
+
+{/* <HiddenContent className={'collapse-content'+ (showCollapse?'':' hidden ')} > */}
