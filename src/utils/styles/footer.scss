@@ -1,0 +1,32 @@
+/* Bloc */
+.footer {
+    background-color: black;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Elements */
+.footer__img {
+  margin-top: 66px;
+  margin-bottom: 32px;
+}
+
+.footer__p {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+@media (max-width: 738px) {
+  .footer__p {
+    font-size: 12px;
+    width: 100px;
+  }
+
+  .footer__img {
+    margin-bottom: 12px;
+  }
+}

@@ -1,0 +1,17 @@
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+
+  }
+
+@media (max-width: 738px) {
+    .home {
+        padding: 27px 20px;
+    }
+}

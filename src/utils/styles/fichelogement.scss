@@ -1,0 +1,11 @@
+
+.fichelogement {
+    padding: 50px;
+  }
+
+
+  @media (max-width: 738px) {
+    .fichelogement {
+      padding: 0px 20px;
+    }
+  }

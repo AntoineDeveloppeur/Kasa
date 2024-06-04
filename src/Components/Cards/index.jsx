@@ -1,5 +1,6 @@
 import logement from '../../data/logement.json'
 import { Link } from 'react-router-dom'
+import '../../utils/styles/cards.scss'
 
 function Cards() {
     return (

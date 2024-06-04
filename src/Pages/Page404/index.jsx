@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import '../../utils/styles/page404.scss'
 
-function Page404() {
+function Page404({setPageOpened}) {
+    useEffect(() => {
+        setPageOpened("")
+    },[])
     return (
 
         <div className="page404">

@@ -1,0 +1,56 @@
+
+/* Bloc */
+.cards {
+    width: 100%;
+    max-width: 1240px;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    .cards__card__p {
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 2;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7)
+    }
+    .cards__card__img {
+        height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    object-fit: none;
+    }
+}
+    
+.cards__card {
+    position: relative;
+    height: 340px;
+    width: 340px;
+    overflow: hidden;
+}
+
+@media (max-width: 738px) {
+    .cards {
+        background-color: white;
+        padding: 0px;
+        gap: 0px;
+        margin-bottom: 0px;
+    }
+
+    .cards__card {
+        position: relative;
+        height: 340px;
+        width: 100%;
+        margin: 0px;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+}

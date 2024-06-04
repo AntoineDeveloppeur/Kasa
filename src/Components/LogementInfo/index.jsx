@@ -5,60 +5,20 @@ import Collapse from '../Collapse'
 import '../../utils/styles/GlobalStyle.scss'
 import splitName from '../../utils/functions/splitname'
 import ListelogementJSON from '../../data/logement.json'
+import '../../utils/styles/logementinfo.scss'
 
-    const Info = styled.div`
-    width: 100%;
-    max-width: 1240px;
-    margin: auto;
-    margin-bottom: 50px;   
-    `
-    const Firstinfo = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    `
-
+    const Info = styled.div``
+    const Firstinfo = styled.div``
     const Titleandtags = styled.div``
-
-    const Title = styled.h1`
-    font-size: 36px;
-    color: #FF6060;
-    `
-
-    const Localisation = styled.p`
-    font-size: 18px;   
-    `
-
-    const Hostandrating = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-    `
-    const Host = styled.div`
-    display: flex;
-    align-items: center;
-    `
-    
+    const Title = styled.h1``
+    const Localisation = styled.p``
+    const Hostandrating = styled.div``
+    const Host = styled.div``
     const Name = styled.div``
-
     const FirstName = styled.p``
-
     const FamilyName = styled.p``
-
-    const Picture = styled.img`
-    height: 64px;
-    width: 64px;
-    border-radius: 32px;
-    `
-
-    const Collapses = styled.div`
-        display: flex;
-        justify-content: space-between;
-        width: auto;
-        max-width: 1240px;
-        gap: 40px;
-    `
+    const Picture = styled.img``
+    const Collapses = styled.div``
 
 
 function LogementInfo({housingIndex}) {
@@ -66,35 +26,35 @@ function LogementInfo({housingIndex}) {
     const [firstName, familyName] = splitName(ListelogementJSON[housingIndex].host.name)
      
     return (
-        <Info>
-            <Firstinfo>
-                <Titleandtags>
-                    <Title>
+        <Info className="info">
+            <Firstinfo className="info__first-info">
+                <Titleandtags className="info__first-info__title-and-tags">
+                    <Title className="info__first-info__title-and-tags__title">
                         {ListelogementJSON[housingIndex].title}
                     </Title>
-                    <Localisation>
+                    <Localisation className="info__first-info__title-and-tags__localisation">
                         {ListelogementJSON[housingIndex].location}
                     </Localisation>
                     <Tags housingIndex={housingIndex}/>
                 </Titleandtags>
-                <Hostandrating>
-                    <Host>
-                        <Name>
-                            <FirstName>
+                <Hostandrating className="info__first-info__host-and-rating">
+                    <Host className="info__first-info__host-and-rating__host">
+                        <Name className="info__first-info__host-and-rating__host__name">
+                            <FirstName className="info__first-info__host-and-rating__host__name__first-name">
                                 {firstName}
                             </FirstName>
-                            <FamilyName>
+                            <FamilyName className="info__first-info__host-and-rating__host_name_family-name">
                                 {familyName}
                             </FamilyName>
-                        </Name>
-                        <Picture src={ListelogementJSON[housingIndex].host.picture}/>
+                        </Name >
+                        <Picture src={ListelogementJSON[housingIndex].host.picture} className="info__first-info__host-and-rating__host__picture"/>
                     </Host>
-                    <Rating housingIndex={housingIndex}/>
+                    <Rating className="info__first-info__host-and-rating__rating" housingIndex={housingIndex}/>
                 </Hostandrating>
             </Firstinfo>
-            <Collapses>
-                <Collapse />
-                <Collapse />
+            <Collapses className="info__collapses">
+                <Collapse title="Description" content={ListelogementJSON[housingIndex].description} />
+                <Collapse title="Equipements" content={ListelogementJSON[housingIndex].equipments} />
             </Collapses>
         </Info>
     )
