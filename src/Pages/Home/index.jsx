@@ -12,7 +12,7 @@ function Home ({setPageOpened}) {
     
     return (
         <div className="home">
-            <Banner pic={banner_home} alt='paysage de montagne'/>
+            <Banner pic={banner_home} message="Chez vous, partout et ailleurs" alt='paysage de montagne'/>
             <Cards />
         </div>
     )

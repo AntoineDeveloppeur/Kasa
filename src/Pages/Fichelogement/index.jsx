@@ -17,8 +17,6 @@ function Fichelogement({setPageOpened}) {
        window.location.href="/404"
     }
 
-    console.log(logement)
-
     return (
         <div className="fichelogement">
             <Gallery housingID={housingID} />

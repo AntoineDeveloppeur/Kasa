@@ -1,3 +1,5 @@
+@import 'variables';
+
 .rating {
     display: flex;
     flex-wrap: nowrap;
@@ -7,7 +9,7 @@
 }
 
 .rating__star {
-    fill: #FF6060;
+    fill: $maincolor;
     width: 24.75px;
     height: 24px;
     margin-left: 12px;

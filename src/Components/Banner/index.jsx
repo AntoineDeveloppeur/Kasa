@@ -1,11 +1,11 @@
 import '../../utils/styles/banner.scss'
 
-function Banner({pic, alt}) {
+function Banner({pic, alt, message}) {
 
     return (
         <div className="banner">
             <h1 className="banner__h1">
-                Chez vous, partout et ailleurs
+                {message}
             </h1>
             <img src={pic} className="banner__img" alt={alt}></img>
         </div>

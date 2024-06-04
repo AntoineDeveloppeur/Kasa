@@ -1,10 +1,9 @@
 
-/* Bloc */
 .banner {
     position: relative;
     margin: auto;
     margin-bottom: 35px;
-    height: 163px;
+    height: 223px;
     border-radius: 20px;
     max-width: 1240px;
     width: 100%;
@@ -21,35 +20,33 @@
         opacity: 0.5;
         z-index:1;
     }
-}
-.banner__h1 {
-    position: absolute;
-    width: calc(100% - 20px);
-    top: 50%;
-    left: 50%;
-    transform : translate(-50%,-50%);
-    z-index: 2;
-    padding: 10px;
-    font-size: 44px;
-    color: white;
-    text-align: center;
-    
-
-}
-.banner__img {
-    object-fit: cover;
-    overflow: hidden;
-    border-radius: 20px;
-    height: 100%;
-    width: 100%;
+    .banner__h1 {
+        position: absolute;
+        width: calc(100% - 20px);
+        top: 50%;
+        left: 50%;
+        transform : translate(-50%,-50%);
+        z-index: 2;
+        padding: 10px;
+        font-size: 44px;
+        color: white;
+        text-align: center;  
+    }
+    .banner__img {
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 20px;
+        height: 100%;
+        width: 100%;
+    }
 }
 
 @media (max-width: 738px) {
-    .banner__h1 {
-        font-size: 24px;
-    }
-    
     .banner {
+        height: 111px;
         margin-bottom: 0px;
+        .banner__h1 {
+            font-size: 24px;
+        }
     }
 }
