@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import ListlogementJSON from '../../data/logement.json'
+import Listlogement from '../../data/logement.json'
 import arrow from '../../assets/arrown_right.png'
 import { useState } from "react";
 import '../../utils/styles/gallery.scss'
@@ -12,12 +12,16 @@ const ArrowLeft = styled.img``
 const ArrowRight = styled.img``
 const Numbering = styled.p``
 
-function Gallery({housingIndex}) {
+function Gallery({housingID}) {
+  let housingIndex = 0
+  Listlogement.map((logement, index) => (
+    logement.id === housingID && (housingIndex = index)
+  ))
 
     const [slideIndex, setSlideIndex] = useState(1)
 
     function handleRight() {
-      slideIndex === ListlogementJSON[housingIndex].pictures.length-1 ?
+      slideIndex === Listlogement[housingIndex].pictures.length-1 ?
       setSlideIndex(1)
       : 
       setSlideIndex(slideIndex+1)
@@ -25,7 +29,7 @@ function Gallery({housingIndex}) {
 
     function handleLeft() {
       slideIndex === 1 ?
-      setSlideIndex(ListlogementJSON[housingIndex].pictures.length-1)
+      setSlideIndex(Listlogement[housingIndex].pictures.length-1)
       :
       setSlideIndex(slideIndex-1)
     }
@@ -34,17 +38,17 @@ function Gallery({housingIndex}) {
       return (
         <GalleryDiv className="gallery-div">
           	<Carroussel className="gallery-div__carroussel" >
-              {ListlogementJSON[housingIndex].pictures.map((pic,index) => (
+              {Listlogement[housingIndex].pictures.map((pic,index) => (
                 <Photo 
                 className="gallery-div__carroussel__photo"
-                key={ListlogementJSON[housingIndex].id+"pic"+index} 
+                key={Listlogement[housingIndex].id+"pic"+index} 
                 src={pic} 
                 style = {{transform : `translateX(${-slideIndex*100}%)`}}
-                alt={`Logement ${ListlogementJSON[housingIndex].title}, photo numéro ${index}`}/>
+                alt={`Logement ${Listlogement[housingIndex].title}, photo numéro ${index}`}/>
               ))}
             </Carroussel>
 
-            {ListlogementJSON[housingIndex].pictures.length > 1 &&
+            {Listlogement[housingIndex].pictures.length > 1 &&
             <div>
               <div className="gallery-div__for-arrow for-arrow-left">
                 <ArrowLeft 
@@ -59,7 +63,7 @@ function Gallery({housingIndex}) {
                 className="gallery-div__arrow arrow-right"/>
               </div>
             <Numbering className="gallery-div__numbering">
-              {slideIndex}/{ListlogementJSON[housingIndex].pictures.length}
+              {slideIndex}/{Listlogement[housingIndex].pictures.length}
             </Numbering>
             </div>
             }

@@ -4,7 +4,7 @@ import Rating from '../Rating'
 import Collapse from '../Collapse'
 import '../../utils/styles/GlobalStyle.scss'
 import splitName from '../../utils/functions/splitname'
-import ListelogementJSON from '../../data/logement.json'
+import ListlogementJSON from '../../data/logement.json'
 import '../../utils/styles/logementinfo.scss'
 
     const Info = styled.div``
@@ -21,19 +21,24 @@ import '../../utils/styles/logementinfo.scss'
     const Collapses = styled.div``
 
 
-function LogementInfo({housingIndex}) {
+function LogementInfo({housingID}) {
 
-    const [firstName, familyName] = splitName(ListelogementJSON[housingIndex].host.name)
+    let housingIndex = 0
+    ListlogementJSON.map((logement, index) => (
+      logement.id === housingID && (housingIndex = index)
+    ))
+
+    const [firstName, familyName] = splitName(ListlogementJSON[housingIndex].host.name)
      
     return (
         <Info className="info">
             <Firstinfo className="info__first-info">
                 <Titleandtags className="info__first-info__title-and-tags">
                     <Title className="info__first-info__title-and-tags__title">
-                        {ListelogementJSON[housingIndex].title}
+                        {ListlogementJSON[housingIndex].title}
                     </Title>
                     <Localisation className="info__first-info__title-and-tags__localisation">
-                        {ListelogementJSON[housingIndex].location}
+                        {ListlogementJSON[housingIndex].location}
                     </Localisation>
                     <Tags housingIndex={housingIndex}/>
                 </Titleandtags>
@@ -47,14 +52,14 @@ function LogementInfo({housingIndex}) {
                                 {familyName}
                             </FamilyName>
                         </Name >
-                        <Picture src={ListelogementJSON[housingIndex].host.picture} className="info__first-info__host-and-rating__host__picture"/>
+                        <Picture src={ListlogementJSON[housingIndex].host.picture} className="info__first-info__host-and-rating__host__picture"/>
                     </Host>
                     <Rating className="info__first-info__host-and-rating__rating" housingIndex={housingIndex}/>
                 </Hostandrating>
             </Firstinfo>
             <Collapses className="info__collapses">
-                <Collapse title="Description" content={ListelogementJSON[housingIndex].description} />
-                <Collapse title="Equipements" content={ListelogementJSON[housingIndex].equipments} />
+                <Collapse title="Description" content={ListlogementJSON[housingIndex].description} />
+                <Collapse title="Equipements" content={ListlogementJSON[housingIndex].equipments} />
             </Collapses>
         </Info>
     )

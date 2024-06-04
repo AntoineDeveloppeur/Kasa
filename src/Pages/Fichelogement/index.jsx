@@ -3,29 +3,26 @@ import Logementinfo from "../../Components/LogementInfo"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import '../../utils/styles/fichelogement.scss'
-import logementjson from '../../data/logement.json'
-import Page404 from "../Page404"
+import Listlogement from '../../data/logement.json'
 
 function Fichelogement({setPageOpened}) {
-    const { housingIndex } = useParams()
-
+    const { housingID } = useParams()
+    
     useEffect(() => {
         setPageOpened("")
     },[])
     
-    let logement= logementjson.find((item) => item.id === housingIndex)
-    // if (logement === undefined) {
-    //     return <Page404 />}
+    let logement= Listlogement.find((item) => item.id === housingID)
+    if (logement === undefined) {
+       window.location.href="/404"
+    }
+
     console.log(logement)
-
-
-
-    
 
     return (
         <div className="fichelogement">
-            <Gallery housingIndex={housingIndex} />
-            <Logementinfo housingIndex={housingIndex} />
+            <Gallery housingID={housingID} />
+            <Logementinfo housingID={housingID} />
         </div>
     )
 }
