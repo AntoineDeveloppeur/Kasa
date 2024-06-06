@@ -7,29 +7,29 @@ import splitName from '../../utils/functions/splitname'
 import ListlogementJSON from '../../data/logement.json'
 import '../../utils/styles/logementinfo.scss'
 
-    const Info = styled.div``
-    const Firstinfo = styled.div``
-    const Titleandtags = styled.div``
-    const Title = styled.h1``
-    const Localisation = styled.p``
-    const Hostandrating = styled.div``
-    const Host = styled.div``
-    const Name = styled.div``
-    const FirstName = styled.p``
-    const FamilyName = styled.p``
-    const Picture = styled.img``
-    const Collapses = styled.div``
+const Info = styled.div``
+const Firstinfo = styled.div``
+const Titleandtags = styled.div``
+const Title = styled.h1``
+const Localisation = styled.p``
+const Hostandrating = styled.div``
+const Host = styled.div``
+const Name = styled.div``
+const FirstName = styled.p``
+const FamilyName = styled.p``
+const Picture = styled.img``
+const Collapses = styled.div``
 
-
-function LogementInfo({housingID}) {
-
+function LogementInfo({ housingID }) {
     let housingIndex = 0
-    ListlogementJSON.map((logement, index) => (
-      logement.id === housingID && (housingIndex = index)
-    ))
+    ListlogementJSON.map(
+        (logement, index) => logement.id === housingID && (housingIndex = index)
+    )
 
-    const [firstName, familyName] = splitName(ListlogementJSON[housingIndex].host.name)
-     
+    const [firstName, familyName] = splitName(
+        ListlogementJSON[housingIndex].host.name
+    )
+
     return (
         <Info className="info">
             <Firstinfo className="info__first-info">
@@ -40,7 +40,7 @@ function LogementInfo({housingID}) {
                     <Localisation className="info__first-info__title-and-tags__localisation">
                         {ListlogementJSON[housingIndex].location}
                     </Localisation>
-                    <Tags housingIndex={housingIndex}/>
+                    <Tags housingIndex={housingIndex} />
                 </Titleandtags>
                 <Hostandrating className="info__first-info__host-and-rating">
                     <Host className="info__first-info__host-and-rating__host">
@@ -51,15 +51,27 @@ function LogementInfo({housingID}) {
                             <FamilyName className="info__first-info__host-and-rating__host_name_family-name">
                                 {familyName}
                             </FamilyName>
-                        </Name >
-                        <Picture src={ListlogementJSON[housingIndex].host.picture} className="info__first-info__host-and-rating__host__picture"/>
+                        </Name>
+                        <Picture
+                            src={ListlogementJSON[housingIndex].host.picture}
+                            className="info__first-info__host-and-rating__host__picture"
+                        />
                     </Host>
-                    <Rating className="info__first-info__host-and-rating__rating" housingIndex={housingIndex}/>
+                    <Rating
+                        className="info__first-info__host-and-rating__rating"
+                        housingIndex={housingIndex}
+                    />
                 </Hostandrating>
             </Firstinfo>
             <Collapses className="info__collapses">
-                <Collapse title="Description" content={ListlogementJSON[housingIndex].description} />
-                <Collapse title="Equipements" content={ListlogementJSON[housingIndex].equipments} />
+                <Collapse
+                    title="Description"
+                    content={ListlogementJSON[housingIndex].description}
+                />
+                <Collapse
+                    title="Equipements"
+                    content={ListlogementJSON[housingIndex].equipments}
+                />
             </Collapses>
         </Info>
     )

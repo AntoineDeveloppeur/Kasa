@@ -6,9 +6,18 @@ function Cards() {
     return (
         <div className="cards">
             {Listlogement.map((card) => (
-                <Link to={`/Fichelogement/${card.id}`} id={card.id} className="cards__card" key={card.id}>
+                <Link
+                    to={`/Fichelogement/${card.id}`}
+                    id={card.id}
+                    className="cards__card"
+                    key={card.id}
+                >
                     <p className="cards__card__p">{card.title}</p>
-                    <img className="cards__card__img" src={card.cover} alt={card.title}/>
+                    <img
+                        className="cards__card__img"
+                        src={card.cover}
+                        alt={card.title}
+                    />
                 </Link>
             ))}
         </div>

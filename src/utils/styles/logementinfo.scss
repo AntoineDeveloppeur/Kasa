@@ -4,7 +4,7 @@
     width: 100%;
     max-width: 1240px;
     margin: auto;
-    margin-bottom: 50px;  
+    margin-bottom: 50px;
     .info__first-info {
         display: flex;
         justify-content: space-between;
@@ -42,17 +42,12 @@
     }
 }
 
-
-
-
-
-
 @media (max-width: 738px) {
     .info {
         .info__first-info {
             flex-direction: column;
             align-items: flex-start;
-            
+
             .info__first-info__host-and-rating {
                 margin-top: 10px;
                 display: flex;
@@ -64,7 +59,7 @@
         }
         .info__collapses {
             flex-direction: column;
-            margin-top:15px;
+            margin-top: 15px;
             display: flex;
             justify-content: space-between;
             width: auto;
@@ -72,5 +67,4 @@
             gap: 20px;
         }
     }
-
 }

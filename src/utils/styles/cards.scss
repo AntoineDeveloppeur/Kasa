@@ -1,10 +1,9 @@
-
 .cards {
     width: 100%;
     max-width: 1240px;
     margin: auto;
     margin-bottom: 50px;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
     border-radius: 20px;
     padding: 50px;
     display: flex;
@@ -25,7 +24,7 @@
         bottom: 20px;
         left: 20px;
         z-index: 2;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7)
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     }
     .cards__card__img {
         height: 100%;
@@ -34,7 +33,6 @@
         object-fit: none;
     }
 }
-    
 
 @media (max-width: 738px) {
     .cards {

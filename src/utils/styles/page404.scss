@@ -8,24 +8,22 @@
     margin-left: 50px;
     margin-right: 50px;
     .page404__h1 {
-    margin-top: 139px;
-    font-size: 288px;
-    color: $maincolor;
+        margin-top: 139px;
+        font-size: 288px;
+        color: $maincolor;
     }
     .page404__p {
-    color: $maincolor;
-    font-weight: 500;
-    font-size: 36px;
+        color: $maincolor;
+        font-weight: 500;
+        font-size: 36px;
     }
     .page404__link {
-    text-decoration: underline;
-    color: black;
-    font-size: 18;
-    margin-bottom: 139px;
+        text-decoration: underline;
+        color: black;
+        font-size: 18;
+        margin-bottom: 139px;
     }
 }
-
-
 
 @media (max-width: 768px) {
     .page404 {
@@ -35,9 +33,9 @@
         .page404__h1 {
             margin-top: 113px;
             font-size: 96px;
-            }
         }
-        .page404__p {
-            font-size: 18px;
-        }
+    }
+    .page404__p {
+        font-size: 18px;
+    }
 }
