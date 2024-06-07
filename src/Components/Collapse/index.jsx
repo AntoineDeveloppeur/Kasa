@@ -12,10 +12,12 @@ const Arrow = styled.img``
 
 function Collapse({ title, content }) {
     const checkArray = Array.isArray(content)
-    const [showCollapse, setShowCollapse] = useState(false)
+    const [showCollapse, setShowCollapse] = useState('')
 
     function handleClick() {
-        setShowCollapse(!showCollapse)
+        setShowCollapse === ''
+            ? (setShowCollapse = true)
+            : setShowCollapse(!showCollapse)
     }
 
     return (
@@ -33,7 +35,9 @@ function Collapse({ title, content }) {
             />
             <HiddenContent
                 className={
-                    showCollapse
+                    showCollapse === ''
+                        ? 'collapse__hidden-content'
+                        : showCollapse === true
                         ? 'collapse__hidden-content show'
                         : ' collapse__hidden-content dont-show'
                 }

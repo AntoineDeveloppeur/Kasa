@@ -6,10 +6,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .header__ul {
+    &__ul {
         display: flex;
     }
-    .header__link {
+    &__link {
         margin-left: 57px;
         font-size: 24px;
         font-weight: 500;
@@ -27,11 +27,11 @@
         margin-left: 20px;
         margin-right: 20px;
         margin-bottom: 0px;
-        .header__logo {
+        &__logo {
             height: 47px;
             width: 145px;
         }
-        .header__link {
+        &__link {
             font-size: 12px;
             margin-left: 26px;
         }

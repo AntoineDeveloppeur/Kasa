@@ -5,26 +5,26 @@
     max-width: 1240px;
     margin: auto;
     margin-bottom: 50px;
-    .info__first-info {
+    &__first-info {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .info__first-info__title-and-tags__title {
+        &__title-and-tags__title {
             font-size: 36px;
             color: $maincolor;
         }
-        .info__first-info__title-and-tags__localisation {
+        &__title-and-tags__localisation {
             font-size: 18px;
         }
-        .info__first-info__host-and-rating {
+        &__host-and-rating {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: end;
-            .info__first-info__host-and-rating__host {
+            &__host {
                 display: flex;
                 align-items: center;
-                .info__first-info__host-and-rating__host__picture {
+                &__picture {
                     height: 64px;
                     width: 64px;
                     border-radius: 32px;
@@ -33,7 +33,7 @@
             }
         }
     }
-    .info__collapses {
+    &__collapses {
         display: flex;
         justify-content: space-between;
         width: auto;
@@ -44,11 +44,11 @@
 
 @media (max-width: 738px) {
     .info {
-        .info__first-info {
+        &__first-info {
             flex-direction: column;
             align-items: flex-start;
 
-            .info__first-info__host-and-rating {
+            &__host-and-rating {
                 margin-top: 10px;
                 display: flex;
                 flex-direction: row-reverse;
@@ -57,7 +57,7 @@
                 width: 100%;
             }
         }
-        .info__collapses {
+        &__collapses {
             flex-direction: column;
             margin-top: 15px;
             display: flex;

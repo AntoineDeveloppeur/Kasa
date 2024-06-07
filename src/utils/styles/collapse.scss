@@ -4,19 +4,19 @@
     margin-top: 30px;
     flex: 1;
     position: relative;
-    .collapse__headband {
+    &__headband {
         height: 52px;
         background-color: $maincolor;
         border-radius: 5px;
     }
-    .collapse__headband__title {
+    &__headband__title {
         line-height: 52px;
         padding-left: 10px;
         color: white;
         font-weight: bold;
         font-size: 24px;
     }
-    .collapse__hidden-content {
+    &__hidden-content {
         position: relative;
         width: 100%;
         background-color: #f6f6f6;
@@ -26,16 +26,44 @@
         padding-top: 15px;
         border-radius: 0 0 10px 10px;
         z-index: 0;
-        transition: height 2s ease-in-out;
         overflow: hidden;
+        transform: scaleY(0);
+        height: auto;
+        display: none;
     }
     .show {
-        height: auto;
+        animation: go-down 1000ms ease-in-out;
+        animation-fill-mode: forwards;
+        display: flex;
     }
 
     .dont-show {
-        height: 0;
-        padding: 0;
+        animation: go-up 1000ms ease-in-out;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes go-down {
+    from {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    to {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
+
+@keyframes go-up {
+    from {
+        transform: scaleY(1);
+        transform-origin: top;
+        display: flex;
+    }
+    to {
+        transform: scaleY(0);
+        transform-origin: top;
+        display: none;
     }
 }
 
@@ -44,10 +72,10 @@
     top: 10px;
     right: 10px;
     transition: transform 0.4s cubic-bezier(0.68, 0.06, 0.08, 0.87);
-    &.arrow-down {
+    &-down {
         transform: rotate(0deg);
     }
-    &.arrow-up {
+    &-up {
         transform: rotate(180deg);
     }
 }
@@ -55,14 +83,14 @@
 @media (max-width: 738px) {
     .collapse {
         margin-top: 20px;
-        .collapse__headband {
+        &__headband {
             height: 30px;
         }
-        .collapse__headband__title {
+        &__headband__title {
             font-size: 13px;
             line-height: 30px;
         }
-        .collapse__hidden-content {
+        &__hidden-content {
             font-size: 10px;
         }
     }
