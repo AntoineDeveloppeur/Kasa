@@ -32,13 +32,13 @@
         display: none;
     }
     .show {
-        animation: go-down 1000ms ease-in-out;
+        animation: go-down 300ms ease-in-out;
         animation-fill-mode: forwards;
         display: flex;
     }
 
     .dont-show {
-        animation: go-up 1000ms ease-in-out;
+        animation: go-up 300ms ease-in-out;
         animation-fill-mode: forwards;
     }
 }
