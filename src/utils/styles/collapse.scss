@@ -20,50 +20,20 @@
         position: relative;
         width: 100%;
         background-color: #f6f6f6;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-        padding-top: 15px;
         border-radius: 0 0 10px 10px;
         z-index: 0;
+        transition: all 400ms ease-in-out;
+        max-height: 0px;
+        padding-bottom: 0;
+        padding-top: 0;
+        padding-left: 20px;
+        padding-right: 20px;
         overflow: hidden;
-        transform: scaleY(0);
-        height: auto;
-        display: none;
     }
     .show {
-        animation: go-down 300ms ease-in-out;
-        animation-fill-mode: forwards;
-        display: flex;
-    }
-
-    .dont-show {
-        animation: go-up 300ms ease-in-out;
-        animation-fill-mode: forwards;
-    }
-}
-
-@keyframes go-down {
-    from {
-        transform: scaleY(0);
-        transform-origin: top;
-    }
-    to {
-        transform: scaleY(1);
-        transform-origin: top;
-    }
-}
-
-@keyframes go-up {
-    from {
-        transform: scaleY(1);
-        transform-origin: top;
-        display: flex;
-    }
-    to {
-        transform: scaleY(0);
-        transform-origin: top;
-        display: none;
+        max-height: 300px;
+        padding-bottom: 20px;
+        padding-top: 15px;
     }
 }
 

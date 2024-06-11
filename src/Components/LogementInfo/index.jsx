@@ -4,7 +4,7 @@ import Rating from '../Rating'
 import Collapse from '../Collapse'
 import '../../utils/styles/GlobalStyle.scss'
 import splitName from '../../utils/functions/splitname'
-import ListlogementJSON from '../../data/logement.json'
+import Listlogement from '../../data/logement.json'
 import '../../utils/styles/logementinfo.scss'
 
 const Info = styled.div``
@@ -21,13 +21,15 @@ const Picture = styled.img``
 const Collapses = styled.div``
 
 function LogementInfo({ housingID }) {
+    // Transforme l'ID en numéro d'index de la liste ListLogement
     let housingIndex = 0
-    ListlogementJSON.map(
+    Listlogement.map(
         (logement, index) => logement.id === housingID && (housingIndex = index)
     )
 
+    // Sépare le nom complet en prénom et nom
     const [firstName, familyName] = splitName(
-        ListlogementJSON[housingIndex].host.name
+        Listlogement[housingIndex].host.name
     )
 
     return (
@@ -35,10 +37,10 @@ function LogementInfo({ housingID }) {
             <Firstinfo className="info__first-info">
                 <Titleandtags className="info__first-info__title-and-tags">
                     <Title className="info__first-info__title-and-tags__title">
-                        {ListlogementJSON[housingIndex].title}
+                        {Listlogement[housingIndex].title}
                     </Title>
                     <Localisation className="info__first-info__title-and-tags__localisation">
-                        {ListlogementJSON[housingIndex].location}
+                        {Listlogement[housingIndex].location}
                     </Localisation>
                     <Tags housingIndex={housingIndex} />
                 </Titleandtags>
@@ -53,7 +55,7 @@ function LogementInfo({ housingID }) {
                             </FamilyName>
                         </Name>
                         <Picture
-                            src={ListlogementJSON[housingIndex].host.picture}
+                            src={Listlogement[housingIndex].host.picture}
                             className="info__first-info__host-and-rating__host__picture"
                         />
                     </Host>
@@ -66,11 +68,11 @@ function LogementInfo({ housingID }) {
             <Collapses className="info__collapses">
                 <Collapse
                     title="Description"
-                    content={ListlogementJSON[housingIndex].description}
+                    content={Listlogement[housingIndex].description}
                 />
                 <Collapse
                     title="Equipements"
-                    content={ListlogementJSON[housingIndex].equipments}
+                    content={Listlogement[housingIndex].equipments}
                 />
             </Collapses>
         </Info>
